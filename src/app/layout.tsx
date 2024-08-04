@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "@/app/globals.css";
-import ThemeProvider from "@/ui/theme-provider";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
     title: "Home | Test Project",
@@ -16,7 +16,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning={true}>
             <body className={quicksand.className}>
                 <ThemeProvider
                     attribute="class"
